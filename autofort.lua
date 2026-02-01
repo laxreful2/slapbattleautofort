@@ -1,7 +1,14 @@
+local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
+
 local Player = game:GetService("Players").LocalPlayer
 local Character = Player.Character or Player.CharacterAdded:Wait()
-if Player.leaderstats.Slaps.Value < 1075 then error("player does not have enough slaps for fort") return end
-
+if Player.leaderstats.Slaps.Value < 1075 then WindUI:Notify({
+    Title = "Not enough",
+    Content = "You Do not have enough slaps for this glove earn 1075 slaps!",
+    Duration = 5, -- 3 seconds
+    Icon = "bird",
+}) return end
+print("nuh uh")
 if Player.leaderstats.Glove.Value ~= "Fort" then fireclickdetector(workspace.Lobby.Fort.ClickDetector) end
 
 firetouchinterest(workspace.Lobby.Teleport1,Character.HumanoidRootPart,0)
